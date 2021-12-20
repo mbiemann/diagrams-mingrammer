@@ -1,10 +1,14 @@
 name: Generate Diagrams
+
+concurrency: ${{ github.workflow }}
+
 on:
   push:
     branches: [ main ]
-concurrency: ${{ github.workflow }}
+    paths-ignore: [ '**.png' ]
+
 jobs:
-  python:
+  compile:
     runs-on: ubuntu-latest
     steps:
 
