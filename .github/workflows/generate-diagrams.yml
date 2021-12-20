@@ -28,5 +28,5 @@ jobs:
           git config user.name "mbiemann"
           git config user.email "mbiemann@gmail.com"
           git add .
-          git commit --allow-empty -m "Generate Diagrams"
+          git commit --allow-empty -m "GitHub Actions Workflow Generate Diagrams"
           git push origin
