@@ -1,7 +1,9 @@
-from diagrams import Diagram
-from diagrams.aws.compute import EC2
-from diagrams.aws.database import RDS
-from diagrams.aws.network import ELB
+import diagrams
 
-with Diagram('', str(__file__).replace('.py',''), show=False):
-    ELB('elb') >> EC2('web') >> RDS('userdb')
+with diagrams.Diagram(
+    name='',
+    file=str(__file__).replace('.py',''),
+    show=False
+):
+    
+    diagrams.programming.language.Python()
