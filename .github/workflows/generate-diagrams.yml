@@ -23,7 +23,7 @@ jobs:
               python $entry
           done
 
-      - name: Commit
+      - name: commit
         run: |
           git config user.name "mbiemann"
           git config user.email "mbiemann@gmail.com"
