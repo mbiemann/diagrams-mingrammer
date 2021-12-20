@@ -8,7 +8,7 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-      - run: apt install graphviz
+      - run: sudo apt install graphviz
       - run: pip install diagrams
       - run: |
           for entry in $(find . -path "*.py")
