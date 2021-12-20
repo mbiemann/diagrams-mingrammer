@@ -2,11 +2,15 @@ name: Generate Diagrams
 on:
   push:
     branches: [ main ]
+concurrency: ${{ github.workflow_name }}
 jobs:
   python:
     runs-on: ubuntu-latest
     steps:
-
       - uses: actions/checkout@v2
-
       - run: pip install -r requirements.txt
+      - run: |
+          for entry in $(find . -path "*.py")
+          do
+              python $entry
+          done
