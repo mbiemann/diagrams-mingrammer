@@ -7,11 +7,26 @@ jobs:
   python:
     runs-on: ubuntu-latest
     steps:
+
       - uses: actions/checkout@v2
-      - run: sudo apt install graphviz
-      - run: pip install diagrams
-      - run: |
+
+      - name: install graphviz
+        run: sudo apt install graphviz
+
+      - name: install diagrams
+        run: pip install diagrams
+
+      - name: execute python
+        run: |
           for entry in $(find . -path "*.py")
           do
               python $entry
           done
+
+      - name: Commit
+        run: |
+          git config user.name "mbiemann"
+          git config user.email "mbiemann@gmail.com"
+          git add .
+          git commit --allow-empty -m "Generate Diagrams"
+          git push origin
