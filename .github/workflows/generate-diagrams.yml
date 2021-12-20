@@ -2,7 +2,7 @@ name: Generate Diagrams
 on:
   push:
     branches: [ main ]
-concurrency: ${{ github.workflow_name }}
+concurrency: ${{ github.workflow }}
 jobs:
   python:
     runs-on: ubuntu-latest
